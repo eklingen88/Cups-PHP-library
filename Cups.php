@@ -11,7 +11,7 @@ class Printer
 
 		foreach( $response as $row ) 
 		{
-	            	preg_match( '/printer\s[^\s]+/', $line, $printer );
+	            	preg_match( '/printer\s([^\s]+)/', $line, $printer );
 	            	preg_match( '/printer\s[^\s]+\s([^\.]+)/', $line, $status_code );
 
 			if( end( $printer ) ) 
