@@ -24,7 +24,7 @@ class Printer
 	}
 
 
-	public function submit( $filename, $printerName = false, $capabilities = array() )
+	public function submit( $filename, $printerName = false, $capabilities = array(), $qnt = false)
 	{
 		if( $printerName )
 		{
@@ -48,6 +48,11 @@ class Printer
 			$command .= $filename;
 		}
 
+		if ( $qnt )
+		{
+			$command .= "-#" . $qnt;	
+		}
+		
 		$this->runCommand( $command );
 	}
 
