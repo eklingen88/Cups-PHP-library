@@ -1,6 +1,6 @@
 <?php 
 
-require_once "Cups.php";
+require_once "../Cups.php";
 
 $printer = new Cups\Printer;
 
