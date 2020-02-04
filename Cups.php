@@ -31,7 +31,7 @@ class Printer
 		
 		if ( $qnt )
 		{
-			$command .= "-#" . $qnt;	
+			$command .= " -#" . $qnt;	
 		}
 		
 		$this->runCommand( $command );
@@ -63,7 +63,7 @@ class Printer
 
 		if ( $qnt )
 		{
-			$command .= "-#" . $qnt;	
+			$command .= " -#" . $qnt;	
 		}
 		
 		$this->runCommand( $command );
