@@ -22,7 +22,20 @@ class Printer
 
 		return array( 'printers' => $printers );
 	}
-
+	
+	public function defaultSubmit( $filename, $qnt = false)
+	{
+		$command = 'lpr ';
+		
+		$command .= $filename;
+		
+		if ( $qnt )
+		{
+			$command .= "-#" . $qnt;	
+		}
+		
+		$this->runCommand( $command );
+	}
 
 	public function submit( $filename, $printerName = false, $capabilities = array(), $qnt = false)
 	{
