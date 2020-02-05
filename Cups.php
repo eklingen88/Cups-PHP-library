@@ -23,6 +23,22 @@ class Printer
 		return array( 'printers' => $printers );
 	}
 	
+	// just set printers status to accept jobs on cups server
+	public function cupsAcceptJobs( $printerName )
+	{	
+		$command = "cupsaccept " . $printerName;
+		
+		$this->runCommand( $command );
+	}
+	
+	// just set printers status to reject jobs on cups server
+	public function cupsRejectJobs( $printerName )
+	{
+		$command = "cupsreject " . $printerName;
+		
+		$this->runCommand( $command );
+	}
+	
 	public function defaultSubmit( $filename, $qnt = false)
 	{
 		$command = 'lpr ';
