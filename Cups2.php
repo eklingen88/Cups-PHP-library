@@ -41,50 +41,13 @@ class Printer
 		$this->runCommand( $command );
 	}
 	
-	public function defaultSubmit( $filename, $qnt = false)
+  // work on ubuntu server 18.04 LTS 02/04/2020
+  // its helps when files has spaces in string destination
+	public function submit( $fileName, $printerName, $qnt )
 	{
-		$command = 'lpr ';
-		
-		$command .= $filename;
-		
-		if ( $qnt )
-		{
-			$command .= " -#" . $qnt;	
-		}
-		
-		$this->runCommand( $command );
-	}
-
-	public function submit( $filename, $printerName = false, $capabilities = array(), $qnt = false)
-	{
-		if( $printerName )
-		{
-			$command = 'lp -d ' . $printerName . ' ';
-		}
-		else
-		{
-			$command = 'lpr ';
-		}
-
-		if( $capabilities )
-		{
-			foreach( $capabilities  as $cap ) 
-			{
-				$command .= '-o ' . $cap . ' ';
-			}
-		}
-
-		if( $filename )
-		{
-			$command .= $filename;
-		}
-
-		if ( $qnt )
-		{
-			$command .= " -#" . $qnt;	
-		}
-		
-		$this->runCommand( $command );
+	  $command = 'lpr -P '. $printerName . ' ' . $fileName . ' 2>&1 -#' . $qnt;
+    
+    return shell_exec($command);
 	}
 
 
