@@ -6,10 +6,13 @@ CUPS is the standards-based, open source printing system developed by Apple Inc.
 
 
 ## Update review submits
-By [isaacmarlon](https://github.com/isaacmarlon)
+Based on [eklingen88](https://github.com/eklingen88/Cups-PHP-library)</br>
+Update by [isaacmarlon](https://github.com/isaacmarlon)
 
-<br>Result of submit function (CUPS Server)</br>
+On Ubuntu Server 18.04 LTS, 02/04/2020...
+
+<br><b>Result of submit function</b> (CUPS Server)</br>
 <img src="imgs/result1.png">
 
-<br>Result of submit function with default printer and quantity of copys (CUPS Server)</br>
+<br><b>Result of submit function with default printer and quantity of copys</b> (CUPS Server)</br>
 <img src="imgs/result2.png">
