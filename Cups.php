@@ -24,6 +24,7 @@ class Printer
 	}
 	
 	// just set printers status to accept jobs on cups server
+	// needs www-data in group lpadmin
 	public function cupsAcceptJobs( $printerName )
 	{	
 		$command = "cupsaccept " . $printerName;
@@ -32,6 +33,7 @@ class Printer
 	}
 	
 	// just set printers status to reject jobs on cups server
+	// needs www-data in group lpadmin
 	public function cupsRejectJobs( $printerName )
 	{
 		$command = "cupsreject " . $printerName;
